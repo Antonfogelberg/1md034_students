@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Bob's Burgers</title>
+    </head>
+    <body>
+        <header>
+            <script type="text/javascript" src="js/menu.js"></script>
+            <script defer src="https://cdn.jsdelivr.net/npm/vue"></script>
+            <script defer src="js/js_script.js"></script>
+            <script defer src="js/vue_script.js"></script>
+            <img src="https://brigantinenow.com/wp-content/uploads/2012/10/30349_483136518384410_182385593_n1.jpg" class="header" id="headpic">
+            <h1>Welcome to the best burger <br/ > delivery site</h1>
+        </header>
+
+        <main id="myID">
+            <!-- <div v-bind:title="message">
+                 {{ message }}
+                 </div>
+            -->
+            <section id="top" >
+                <div class="wrapper">
+
+                    <template v-for="burger in burgerArray">
+                        <div class="box burgername">{{burger.name}}</div>
+                        <div class="box burgerimg spinner"><input name="burgerchoice" type="checkbox" :value="burger.name"><img v-bind:src="burger.img" :alt="burger.name" :title="burger.name" style="width:240px;height:240px;"></div>
+                        <div class="box burgerinfo">
+                            <ul>
+                                <li>Flavour: {{burger.flavour}}</li>
+                                <li v-if="burger.gluten"><span id="idname">gluten</span> </li>
+                                <li> {{burger.price}}</li>
+                            </ul>
+                        </div>
+                    </template>
+                </div>
+
+                <section>
+                    <h4>Customer information</h4>
+                    <a href="/map" target="_blank">Open map in new window</a>.
+                </section>
+
+
+                <br/ >
+                <section id="contact">
+                    <form>
+                        <p>
+                            <label for="firstname">First and last name</label><br>
+                            <input type="text" id="firstandlastname" name="fn" required="required" placeholder="Name">
+                        </p>
+                        <p>
+                            <label for="lastname">Street</label><br>
+                            <input type="text" id="street" name="street" placeholder="Street">
+                        </p>
+                        <p>
+                            <label for="house">House</label><br>
+                            <input type="text" id="house" name="house" required="required" placeholder="House">
+                        </p>
+                        <p>
+                            <label for="email">E-mail</label><br>
+                            <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+                        </p>
+                    </form>
+                </section>
+                <section id="gender">
+                    <h4>Please select your gender for you know... reasons:</h4>
+                    <form>
+                        <p>
+                            <label for="Male">Male</label><br>
+                            <input type="radio" value="Male" id="male" name="gender" required="required" placeholder="Male">
+                        </p>
+                        <p>
+                            <label for="Female">Female</label><br>
+                            <input type="radio" value="Female" id="female" name="gender" required="required" placeholder="Female">
+                        </p>
+                        <p>
+                            <label for="No pls">No pls</label><br>
+                            <input type="radio" value="No pls" id="no pls" name="gender" required="required" placeholder="No pls" checked="checked">
+                        </p>
+
+
+                    </form>
+
+                </section>
+                <section>
+                    <p>
+                        <label for="payment">Payment method</label><br>
+                        <select id="payment" name="payment">
+                            <option>Credit card</option>
+                            <option>Swish</option>
+                            <option>Kontant</option>
+                        </select>
+                    </p>
+                </section>
+
+        </main>
+        <section id="samlaihopallt">
+            <button style="width:80%" type="submit" v-on:click="markDone"><img style="width:100%" src="http://rumahtahfidz.or.id/img/button/button%20konfirmasi.png" ></button>
+            <img style="display:inline;width:19%" src="https://media.giphy.com/media/ctNJp7PTRuRNTREyTj/giphy.gif" >
+
+            <div>
+                {{output}}
+            </div>
+
+        </section>
+    </body>
+</html>
+
+
+
+
